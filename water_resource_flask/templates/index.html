@@ -1,0 +1,55 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section id="about">
+  <h2>About</h2>
+  <p>This Flask demo shows Water Resource Management features: leak detection, quality monitoring, irrigation optimization and analytics.</p>
+</section>
+
+<section id="modules">
+  <h2>Modules</h2>
+  <input id="search" placeholder="Search modules..." />
+  <div class="module-grid">
+    <div class="module-card">Smart Water Leak Detection</div>
+    <div class="module-card">Water Quality Monitoring</div>
+    <div class="module-card">Irrigation Optimization</div>
+    <div class="module-card">Urban Water Supply Analytics</div>
+  </div>
+</section>
+
+<section id="calculator">
+  <h2>Water Savings Calculator</h2>
+  <form id="calcForm" onsubmit="return false;">
+    <label>Liters saved per day: <input id="liters" type="number" value="50"></label>
+    <label>Leaks prevented per month: <input id="leaks" type="number" value="2"></label>
+    <label>Households served: <input id="households" type="number" value="10"></label>
+    <button id="calcBtn">Calculate</button>
+  </form>
+  <div id="calcResult"></div>
+  <canvas id="calcChart" width="600" height="300"></canvas>
+</section>
+
+<section id="upload-link">
+  <h2>Data Upload</h2>
+  <p>You can upload CSV usage data (<code>timestamp, flow_liters</code> suggested) to test analytics.</p>
+  <a class="button" href="{{ url_for('upload') }}">Upload CSV Data</a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <form id="contactForm" method="post" action="{{ url_for('contact') }}">
+    <label>Name: <input name="name" required></label>
+    <label>Email: <input name="email" type="email" required></label>
+    <label class="full">Message: <textarea name="message" required></textarea></label>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<section id="narration">
+  <h2>🔊 Project Narration</h2>
+  <audio controls>
+    <source src="{{ url_for('static', filename='assets/ttsreader_water-reso.mp3') }}" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+</section>
+{% endblock %}

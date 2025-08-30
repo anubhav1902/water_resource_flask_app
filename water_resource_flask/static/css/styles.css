@@ -1,0 +1,15 @@
+
+*{box-sizing:border-box}
+body{font-family:system-ui,Arial;background:#f7fbff;color:#0f172a;margin:0}
+.container{width:min(1100px,94vw);margin:0 auto;padding:1rem}
+.site-header{background:#0288d1;color:#fff;padding:1rem 0;text-align:center}
+.logo{width:40px;vertical-align:middle;margin-right:.5rem}
+.nav{display:flex;gap:1rem;justify-content:center;background:#0369a1;padding:0.5rem}
+.nav a{color:white;text-decoration:none;padding:.4rem .6rem}
+.module-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.module-card{background:#e6f7ff;padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,.06)}
+.button{display:inline-block;padding:.6rem 1rem;background:#0288d1;color:white;border-radius:6px;text-decoration:none}
+.flash{background:#e0f2fe;padding:.6rem;border-radius:6px;margin-bottom:1rem}
+form label{display:block;margin:.5rem 0}
+input[type=number],input[type=text],input[type=email],textarea{padding:.5rem;width:100%;max-width:420px;border-radius:6px;border:1px solid #dbeafe}
+@media(min-width:800px){.container{padding:2rem}}
